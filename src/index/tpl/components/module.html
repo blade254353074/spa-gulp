@@ -1,0 +1,6 @@
+{{each list}}
+<li class="drag-item" data-id="{{$value.id}}" draggable="true">
+    <div class="drag-icon {{$value.icon}}"></div>
+    <div class="drag-text">{{$value.name}}</div>
+</li>
+{{/each}}

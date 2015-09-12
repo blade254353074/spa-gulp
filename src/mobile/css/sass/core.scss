@@ -1,0 +1,149 @@
+$red: #E62925;
+$blue: #3DA9F7;
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg) skewY(-5deg);
+    }
+    100% {
+        transform: rotate(360deg) skewY(-5deg);
+    }
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: rgba(0, 0, 0, .4);
+    box-shadow: none;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    background: transparent !important;
+    display: block;
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+::-webkit-scrollbar-track {
+    width: 6px;
+    background: transparent !important;
+    box-shadow: none;
+}
+
+body {
+    max-width: 768px;
+    margin: 0 auto;
+    background-color: #fff;
+    animation: fadeIn .3s ease;
+}
+
+.text-red {
+    color: $red;
+}
+
+.sending {
+    &:before {
+        content: "\e031";
+        display: inline-block;
+        position: relative;
+        top: 1px;
+        margin-right: 6px;
+        line-height: 1;
+        font-family: iconfont;
+        transform-origin: center;
+        animation: spin .6s linear infinite;
+    }
+}
+
+.reader-text {
+    font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+.single-line {
+    overflow: hidden;
+    word-break: break-all;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+}
+
+.drop-module {
+    position: relative;
+    border: 1px solid transparent;
+    cursor: default;
+    z-index: 10;
+    &:hover,
+    &.active {
+        border: 1px solid #37a1ec;
+    }
+    &.moving {
+        border: 1px solid #37a1ec;
+        opacity: .7;
+        cursor: move;
+        pointer-events: none;
+        .module-control {
+            display: block;
+        }
+    }
+    &:hover {
+        .module-control {
+            display: block;
+        }
+    }
+}
+
+.module-placeholder {
+    height: 50px;
+    line-height: 50px;
+    border: 1px dashed #EC6941;
+    background: #FFE5CD;
+    color: #EC6941;
+    text-align: center;
+}
+
+.module-control {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    line-height: 24px;
+    text-align: center;
+    animation: fadeIn .3s ease;
+    &>span {
+        position: absolute;
+        top: 0;
+        height: 24px;
+        border: 1px solid #37a1ec;
+        background: #fff;
+        color: #37a1ec;
+    }
+    .module-move {
+        left: 50%;
+        width: 36px;
+        border-top: none;
+        border-radius: 0 0 3px 3px;
+        transform: translateX(-50%);
+        cursor: move;
+    }
+    .module-delete {
+        right: 0;
+        width: 26px;
+        border-width: 0 0 1px 1px;
+        border-radius: 0 0 0 3px;
+        cursor: pointer;
+        &:hover {
+            border-color: #E03507;
+            background: #E03507;
+            color: #fff;
+        }
+    }
+}

@@ -1,0 +1,2 @@
+/*TMODJS:{"version":1,"md5":"3c2a0a85d0315c45cc1b2a310d4980d7"}*/
+template('common/module-control','<div class="module-control"> <span class="module-move"> <i class="icon icon-move"></i> </span> <span class="module-delete"> <i class="icon icon-remove"></i> </span> </div> ');

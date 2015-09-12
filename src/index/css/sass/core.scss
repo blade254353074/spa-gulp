@@ -1,0 +1,168 @@
+$gray2: #222;
+$gray4: #444;
+$gray6: #666;
+$gray8: #888;
+$graya: #aaa;
+$grayc: #ccc;
+$graye: #eee;
+$white: #fff;
+$red: #E62925;
+$blue: #3DA9F7;
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg) skewY(-5deg);
+    }
+    100% {
+        transform: rotate(360deg) skewY(-5deg);
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    min-width: 768px;
+    background-color: #f5f4f3;
+    animation: fadeIn .3s ease;
+}
+
+.text-red {
+    color: $red;
+}
+
+.sending {
+    &:before {
+        content: "\e031";
+        display: inline-block;
+        position: relative;
+        top: 1px;
+        margin-right: 6px;
+        line-height: 1;
+        font-family: iconfont;
+        transform-origin: center;
+        animation: spin .6s linear infinite;
+    }
+}
+
+.reader-text {
+    font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+.single-line {
+    overflow: hidden;
+    word-break: break-all;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+}
+
+.header {
+    width: 100%;
+    height: 50px;
+    line-height: 49px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.work-bench {
+    display: table;
+    &>div {
+        display: table-cell;
+        padding-top: 10px;
+        vertical-align: middle;
+    }
+}
+
+.toolbar {
+    position: relative;
+    .tool-left {
+        display: inline-block;
+        width: 320px;
+    }
+}
+
+.drag-box {
+    height: 100%;
+    padding: 20px;
+    background: #fff;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    .drag-item {
+        display: inline-block;
+        width: 60px;
+        margin: 0 15px 15px;
+        cursor: move;
+        user-drag: element;
+        .drag-icon {
+            display: block;
+            width: 60px;
+            height: 55px;
+            background: url(/assets/index/imgs/icon.png) no-repeat;
+            background-size: 60px auto;
+        }
+        .drag-text {
+            display: block;
+            width: 60px;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            color: #666;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    }
+}
+
+.stage {
+    width: 480px;
+}
+
+.phone {
+    position: relative;
+    width: 380px;
+    height: 800px;
+    margin: 0 100px;
+    background: url(/assets/index/imgs/iPhone5s.png) no-repeat;
+    background-size: 100% auto;
+    /* transform: scale(.8); */
+    .screen {
+        position: absolute;
+        top: 117px;
+        left: 32px;
+        width: 320px;
+        height: 568px;
+        background: #fff;
+    }
+    .address-bar {
+        height: 45px;
+        line-height: 44px;
+        border-bottom: 1px solid #C9C9C9;
+        background: #F8F8F8;
+        text-align: center;
+        input {
+            width: 300px;
+            height: 30px;
+            padding: 5px 10px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            border: none;
+            background: #E6E7E8;
+            border-radius: 5px;
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+    .browser-area {}
+}

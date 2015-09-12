@@ -1,0 +1,29 @@
+.article-list {
+    li {
+        padding: 5px 10px;
+        border-bottom: 1px dashed #eee;
+        &:last-of-type {
+            border-bottom: none;
+        }
+        &.ph {
+            padding: 15px 10px;
+            text-align: center;
+        }
+    }
+    &.t1 {
+        .cover {
+            float: left;
+            width: 75px;
+            height: 75px;
+        }
+        .content {
+            margin-left: 85px;
+        }
+        .title {
+            margin-top: 0;
+        }
+        .summary {
+            color: #888;
+        }
+    }
+}

@@ -1,0 +1,2 @@
+/*TMODJS:{"version":3,"md5":"6e893e284a97435499d5a3eaa2082c73"}*/
+template('public/loading','<div class="loading"> <div class="loading-pacman"> <div></div> <div></div> <div></div> <div></div> <div></div> </div> </div> ');

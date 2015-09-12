@@ -1,0 +1,20 @@
+<div class="article-list t1">
+    <ul>
+        {{if list}}
+            {{each list}}
+            <li>
+                <a href="/article/{{id}}"></a>
+                <img src="{{$value.cover}}" class="cover">
+                <div class="content">
+                    <h4 class="title">{{$value.title}}</h4>
+                    <div class="summary">{{$value.summary}}</div>
+                </div>
+            </li>
+            {{/each}}
+        {{else}}
+            <li class="ph">
+                文章列表为空，请添加文章
+            </li>
+        {{/if}}
+    </ul>
+</div>
